@@ -6,7 +6,13 @@ app.config(['$routeProvider', '$locationProvider',
         $routeProvider
             .when('/', {
                 templateUrl: 'static/views/boitiers.html',
-                controller: "boitiersCtrl",
+                controller: "listeCtrl",
+                resolve: {
+                    liste: function(userFactory) {
+                        console.log('myApp, resolve, liste');
+                        return userFactory.query();
+                    }
+                }
             })
             .otherwise({
                 redirectTo: '/',
