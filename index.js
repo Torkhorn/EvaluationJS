@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Particle = require("particle-api-js");
+var User = require("./models/user.js");
 const app = express();
 
 var server = require("http").createServer(app);
