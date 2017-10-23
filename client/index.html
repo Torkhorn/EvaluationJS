@@ -20,13 +20,8 @@
 
                     <h1>Liste des utilisateus</h1>
 
-                    <ul class="list-group" ng-controller="listeUser">
-                        <li class="list-group-item">Utilisateur 1</li>
-                        <li class="list-group-item">Utilisateur 2</li>
-                        <li class="list-group-item">Utilisateur 3</li>
-                        <li class="list-group-item">Utilisateur 4</li>
-                        <li class="list-group-item">Utilisateur 5</li>
-                        <li class="list-group-item">Utilisateur 6</li>
+                    <ul class="list-group" ng-repeat="n in maListe">
+                        <li class="list-group-item">{{n}}</li>
                     </ul>
 
                 </div> <!-- col-xs-3 -->
