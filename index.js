@@ -46,3 +46,34 @@ app.use('/static', express.static('./client/app'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/client/index.html');
 });
+
+// API
+// renvoyer la collection des utilisateurs
+app.get('/api/liste', function(req, res) {
+    User.find({}, function(err, collection) {
+        if(err) {
+            console.log(err);
+            return res.send(500);
+        }
+        else {
+            return res.send(collection);
+        }
+    });
+});
+
+// renvoyer un utilisateur en fonction de son ID
+app.get('/api/liste/:id', function(req, res) {
+    console.log(req.params);
+    console.log(req.params.id);
+    User.findOne({
+        "_id": req.params.id
+    }, function(err, monobject) {
+        if(err) {
+            console.log(err);
+            return res.send(err);
+        }
+        else {
+            res.send(monobject);
+        }
+    });
+});
