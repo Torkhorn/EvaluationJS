@@ -1,9 +1,8 @@
-app.factory("userFactory", ['$resource', function($resource) {
-    return $resource('/api/liste/userId', {
-        userId: '@_id'}, {
-            update: {
-                method: 'PUT'
-            }
-        });
+app.factory("userListe", ['$resource', function($resource) {
+    return $resource('/home', {
+    update: {
+        method: 'PUT'
     }
+});
+}
 ]);

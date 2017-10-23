@@ -8,9 +8,8 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'static/views/boitiers.html',
                 controller: "listeCtrl",
                 resolve: {
-                    liste: function(userFactory) {
-                        console.log('myApp, resolve, liste');
-                        return userFactory.query();
+                    liste: function(userListe) {
+                        return userListe.query();
                     }
                 }
             })

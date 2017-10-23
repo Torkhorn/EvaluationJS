@@ -11,17 +11,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <title>Evaluation Javascript</title>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="listeCtrl">
 
     <div class="mainWrap">
         <div class="container">
             <div class="row">
                 <div class="col-xs-3">
 
-                    <h1>Liste des utilisateus</h1>
+                    <h1>Liste des utilisateurs</h1>
 
-                    <ul class="list-group" ng-repeat="n in maListe">
-                        <li class="list-group-item">{{n}}</li>
+                    <ul class="list-group" ng-repeat="n in userListe">
+                        <li class="list-group-item">{{n.items}}</li>
                     </ul>
 
                 </div> <!-- col-xs-3 -->
@@ -35,6 +35,7 @@
     <script src="/static/myApp.js"></script>
     <script src="/static/controllers/boitiers.ctrl.js"></script>
     <script src="/static/controllers/listeUser.ctrl.js"></script>
+    <script src="/static/service/userService.js"></script>
     
 </body>
 </html>

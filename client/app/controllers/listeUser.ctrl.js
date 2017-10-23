@@ -1,5 +1,5 @@
-app.controller("listeCtrl", function($scope, $http, liste, userFactory) {
-    $scope.maListe = liste;
-    console.log(liste);
-    console.log($scope.maListe);
+app.controller("listeCtrl", function($scope, $rootscope, userListe) {
+    
+    $scope.userListe = liste;
+    console.log($scope.userListe);
 })

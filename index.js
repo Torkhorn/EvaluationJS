@@ -21,7 +21,7 @@ promise.then(
     () => {
         console.log("Base de données connectée");
         // On démarre le serveur sur le port 3000
-        server.listen(3000, function() {
+       server.listen(3000, function() {
             console.log("L'application écoute sur le port 3000 !")
         });
     },
@@ -49,7 +49,7 @@ app.get('/', function(req, res) {
 
 // API
 // renvoyer la collection des utilisateurs
-app.get('/api/liste', function(req, res) {
+app.get('/home', function(req, res) {
     User.find({}, function(err, collection) {
         if(err) {
             console.log(err);
@@ -62,18 +62,18 @@ app.get('/api/liste', function(req, res) {
 });
 
 // renvoyer un utilisateur en fonction de son ID
-app.get('/api/liste/:id', function(req, res) {
-    console.log(req.params);
-    console.log(req.params.id);
-    User.findOne({
-        "_id": req.params.id
-    }, function(err, monobject) {
-        if(err) {
-            console.log(err);
-            return res.send(err);
-        }
-        else {
-            res.send(monobject);
-        }
-    });
-});
+// app.get('/api/liste/:id', function(req, res) {
+//     console.log(req.params);
+//     console.log(req.params.id);
+//     User.findOne({
+//         "_id": req.params.id
+//     }, function(err, monobject) {
+//         if(err) {
+//             console.log(err);
+//             return res.send(err);
+//         }
+//         else {
+//             res.send(monobject);
+//         }
+//     });
+// });
